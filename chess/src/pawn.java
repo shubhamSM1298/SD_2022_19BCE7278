@@ -21,4 +21,8 @@ public boolean ep_able;
 
         return this.player;
     }
+    public String toString(){
+        return player.charAt(7) + "p";
+
+    }
 }
