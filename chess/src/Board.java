@@ -1,22 +1,21 @@
 import java.io.IOException;
 
 public class Board {
-    public piece[][] board1 = new piece[8][8];
+    public piece[][] board1 = new piece[5][5];
     public Board()
     {
         this.initialize();
     }
     private void initialize() {
-        for (int i = 0 ; i < 5 ; i++){
-            for (int j = 0 ; j < 5 ; j++) {
-                board1[i][j]= null;
+        for (int i = 0 ; i < board1.length ; i++){
+            for (int j = 0 ; j < board1[0].length ; j++) {
+                board1[i][j]=null;
             }
         }
         for(int x=0; x<5; x++){
             board1[4][x] = new pawn("Player A");
         }
 
-        // Black pawns
         for(int x=0; x<5; x++){
             board1[0][x] = new pawn("Player B");
         }
