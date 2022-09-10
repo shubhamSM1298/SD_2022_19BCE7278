@@ -1,7 +1,7 @@
 import java.io.IOException;
 
 public class Board {
-    public piece[][] board1 = new piece[5][5];
+    public String [][] board1 = new String[5][5];
     public Board()
     {
         this.initialize();
@@ -9,15 +9,21 @@ public class Board {
     private void initialize() {
         for (int i = 0 ; i < board1.length ; i++){
             for (int j = 0 ; j < board1[0].length ; j++) {
-                board1[i][j]=null;
+                board1[i][j]="-\t";
             }
         }
         for(int x=0; x<5; x++){
-            board1[4][x] = new pawn("Player A");
+            board1[4][x] = "A-P"+(x+1);
         }
 
         for(int x=0; x<5; x++){
-            board1[0][x] = new pawn("Player B");
+            board1[0][x] = "B-P"+(x+1);
+        }
+        for (int i = 0 ; i < board1.length ; i++){
+            for (int j = 0 ; j < board1[0].length ; j++) {
+               System.out.print( board1[i][j]+" ");
+            }
+            System.out.println();
         }
     }
     public static void insertborad(String p[])
@@ -25,7 +31,9 @@ public class Board {
 
     }
 
-    public void performMove(char move, String player, boolean actuallyMove) throws IOException{
+    public void performMove(String move) throws IOException{
+
+        String ch[]=move.split(":");
 
     }
 }
