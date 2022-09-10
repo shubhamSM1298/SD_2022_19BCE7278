@@ -8,10 +8,10 @@ public class chess {
         while(true) {
             Scanner q = new Scanner(System.in);
 
-            System.out.print(board);
+
             System.out.print(player+" move: ");
             String move=q.next();
-            board.performMove(move);
+            board.performMove(move,player);
             /*
             String p[] = new String[5];
             for (int i = 0; i < 5; i++) {

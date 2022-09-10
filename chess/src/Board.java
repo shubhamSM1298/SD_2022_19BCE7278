@@ -31,9 +31,44 @@ public class Board {
 
     }
 
-    public void performMove(String move) throws IOException{
+    public void performMove(String move,String player) throws IOException{
 
         String ch[]=move.split(":");
+        for(int i=0;i<5;i++)
+        {
+            for(int j=0;j<5;j++)
+            {
+                String p=player.charAt(7)+"-"+ch[0];
+                //System.out.println(p);
+                if(player=="Player A") {
 
+                    if (board1[i][j].equals(p)) {
+                        //System.out.println(p);
+                        if (ch[1] .equals("F")) {
+                            board1[i - 1][j]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                    }
+                }
+                else
+                {
+                    if (board1[i][j] == p) {
+                        if (ch[1] == "F") {
+                            board1[i + 1][j]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                    }
+                }
+            }
+        }
+        for (int i = 0 ; i < board1.length ; i++){
+            for (int j = 0 ; j < board1[0].length ; j++) {
+                System.out.print( board1[i][j]+" ");
+            }
+            System.out.println();
+        }
     }
+
+
+
 }
