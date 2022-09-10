@@ -48,13 +48,37 @@ public class Board {
                             board1[i - 1][j]=board1[i][j];
                             board1[i][j]="-";
                         }
+                        if (ch[1] .equals("B")) {
+                            board1[i + 1][j]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                        if (ch[1] .equals("R")) {
+                            board1[i][j+1]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                        if (ch[1] .equals("L")) {
+                            board1[i][j-1]=board1[i][j];
+                            board1[i][j]="-";
+                        }
                     }
                 }
                 else
                 {
-                    if (board1[i][j] == p) {
-                        if (ch[1] == "F") {
+                    if (board1[i][j].equals( p)) {
+                        if (ch[1].equals( "F")) {
                             board1[i + 1][j]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                        if (ch[1] .equals("B")) {
+                            board1[i - 1][j]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                        if (ch[1] .equals("R")) {
+                            board1[i][j-1]=board1[i][j];
+                            board1[i][j]="-";
+                        }
+                        if (ch[1] .equals("L")) {
+                            board1[i][j+1]=board1[i][j];
                             board1[i][j]="-";
                         }
                     }
